@@ -1,0 +1,133 @@
+$panel-border-color: #c5c6e8;
+$panel-border-radius: 10px;
+
+$protists-color: #714486;
+$plants-color: #407253;
+$bacteria-color: #70708d;
+$fungi-color: #725a4c;
+$metazoa-color: #015365;
+
+.home__division-panel {
+  border: 1px solid $panel-border-color;
+  border-radius: $panel-border-radius;
+  max-width: 456px;
+  text-align: center;
+}
+
+.home__division-panel_protists {
+  grid-area: protists;
+}
+
+.home__division-panel_plants {
+  grid-area: plants;
+}
+
+.home__division-panel_bacteria {
+  grid-area: bacteria;
+}
+
+.home__division-panel_fungi {
+  grid-area: fungi;
+}
+
+.home__division-panel_metazoa {
+  grid-area: metazoa;
+}
+
+.home__panel-species {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  grid-column-gap: 10px;
+  margin-left: 50px;
+  text-align: left;
+  
+  & + & {
+    margin-top: 16px;
+  }
+}
+
+.home__panel-species-image {
+  img {
+    max-width: 100%;
+  }
+}
+
+.home__panel-goto-button {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 28px;
+
+  &, &:visited {
+    color: white;
+  }
+  
+  &_protists {
+    background-color: $protists-color;
+
+    &:hover {
+      background-color: darken($protists-color, 5%);
+    }
+  }
+
+  &_plants {
+    background-color: $plants-color;
+
+    &:hover {
+      background-color: darken($plants-color, 5%);
+    }
+  }
+
+  &_bacteria {
+    background-color: $bacteria-color;
+
+    &:hover {
+      background-color: darken($bacteria-color, 5%);
+    }
+  }
+
+  &_fungi {
+    background-color: $fungi-color;
+
+    &:hover {
+      background-color: darken($fungi-color, 5%);
+    }
+  }
+
+  &_metazoa {
+    background-color: $metazoa-color;
+
+    &:hover {
+      background-color: darken($metazoa-color, 5%);
+    }
+  }
+}
+
+.home__modern-panel_covid {
+  grid-area: sars;
+}
+
+.home__modern-panel_rapid {
+  grid-area: rapid-release;
+}
+
+
+.home__modern-panel-header {
+  height: 64px;
+  padding-left: 24px;
+  background-color: #3d78a5;
+  border-top-left-radius: $panel-border-radius;
+  border-top-right-radius: $panel-border-radius;
+}
+
+.home__modern-panel-body {
+  height: 66px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-color: $panel-border-color;
+  border-right-color: $panel-border-color;
+  border-bottom-color: $panel-border-color;
+  border-bottom-left-radius: $panel-border-radius;
+  border-bottom-right-radius: $panel-border-radius;
+}

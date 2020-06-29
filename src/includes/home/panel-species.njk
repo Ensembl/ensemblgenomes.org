@@ -1,0 +1,17 @@
+<div class="home__panel-species">
+  <div class="home__panel-species-image">
+    {% if species.image %}
+      <img src="/images/species/{{ species.image }}" alt="{{ species.name }}"/>
+    {% endif %}
+  </div>
+  <div class="home__panel-species-info">
+    <div class="home__panel-species-name">
+      <a href="{{ species.link }}">
+        {{ species.name }}
+      </a>
+    </div>
+    <div class="home__panel-species-assembly">
+      {{ species.assembly }}
+    </div>
+  </div>
+</div>

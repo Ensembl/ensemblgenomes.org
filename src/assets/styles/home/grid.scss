@@ -1,0 +1,14 @@
+.home-grid {
+  display: grid;
+  width: 1412px;
+  height: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "blog-link search search"
+    "protists plants sars"
+    "protists plants rapid-release"
+    "bacteria fungi metazoa"
+    "bacteria fungi metazoa";
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}

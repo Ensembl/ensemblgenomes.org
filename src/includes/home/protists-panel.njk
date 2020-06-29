@@ -1,0 +1,11 @@
+<div class="home__division-panel home__division-panel_protists">
+  <div>
+    Here be logo!
+  </div>
+  {% for species in home.divisions.protists.species %}
+    {% include 'home/panel-species.njk' %}
+  {% endfor %}
+  <a class="home__panel-goto-button home__panel-goto-button_protists" href="https://protists.ensembl.org/index.html">
+    Go to Ensembl Protists
+  </a>
+</div>

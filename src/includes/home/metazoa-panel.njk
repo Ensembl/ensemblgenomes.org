@@ -1,0 +1,11 @@
+<div class="home__division-panel home__division-panel_metazoa">
+  <div>
+    Here be logo!
+  </div>
+  {% for species in home.divisions.metazoa.species %}
+    {% include 'home/panel-species.njk' %}
+  {% endfor %}
+  <a class="home__panel-goto-button home__panel-goto-button_metazoa" href="https://metazoa.ensembl.org/index.html">
+    Go to Ensembl Metazoa
+  </a>
+</div>

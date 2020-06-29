@@ -1,0 +1,11 @@
+<div class="home__division-panel home__division-panel_fungi">
+  <div>
+    Here be logo!
+  </div>
+  {% for species in home.divisions.fungi.species %}
+    {% include 'home/panel-species.njk' %}
+  {% endfor %}
+  <a class="home__panel-goto-button home__panel-goto-button_fungi" href="https://fungi.ensembl.org/index.html">
+    Go to Ensembl Fungi
+  </a>
+</div>

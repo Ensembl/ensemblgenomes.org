@@ -1,0 +1,68 @@
+divisions:
+  protists:
+    species:
+      - name: Plasmodium falciparum 3D7
+        assembly: ASM276v2
+        link: https://protists.ensembl.org/Plasmodium_falciparum/Info/Index
+        image: Plasmodium_falciparum.png
+      - name: Dictyostelium discoideum
+        assembly: dicty_2.7
+        link: https://protists.ensembl.org/Dictyostelium_discoideum/Info/Index
+        image: Dictyostelium_discoideum.png
+      - name: Phytophthora infestans
+        assembly: ASM14294v1
+        link: https://protists.ensembl.org/Phytophthora_infestans/Info/Index
+        image: Phytophthora_infestans.png
+  plants:
+    species:
+      - name: Triticum aestivum
+        assembly: IWGSC
+        link: https://plants.ensembl.org/Triticum_aestivum/Info/Index
+        image: Triticum_aestivum.png
+      - name: Oryza sativa Japonica Group
+        assembly: IRGSP-1.0
+        link: https://plants.ensembl.org/Oryza_sativa/Info/Index
+        image: Oryza_sativa.png
+      - name: Arabidopsis thaliana
+        assembly: TAIR10
+        link: https://plants.ensembl.org/Arabidopsis_thaliana/Info/Index
+        image: Arabidopsis_thaliana.png
+  bacteria:
+    species:
+      - name: Streptococcus pneumoniae
+        assembly: Spn.str2298_v1.0
+        link: https://bacteria.ensembl.org/Streptococcus_pneumoniae/Info/Index
+      - name: Escherichia coli
+        assembly: AL505-MS
+        link: https://bacteria.ensembl.org/Escherichia_coli_gca_001499595/Info/Index
+      - name: Bacillus subtilis
+        assembly: ASM73511v1
+        link: https://bacteria.ensembl.org/Bacillus_subtilis_gca_000735115/Info/Index
+  fungi:
+    species:
+      - name: Magnaporthe oryzae
+        assembly: MG8
+        link: https://fungi.ensembl.org/Magnaporthe_oryzae/Info/Index
+        image: Magnaporthe_oryzae.png
+      - name: Saccharomyces cerevisiae
+        assembly: R64-1-1
+        link: https://fungi.ensembl.org/Saccharomyces_cerevisiae/Info/Index
+        image: Saccharomyces_cerevisiae.png
+      - name: Aspergillus nidulans
+        assembly: ASM1142v1
+        link: https://fungi.ensembl.org/Aspergillus_nidulans/Info/Index
+        image: Aspergillus_nidulans.png
+  metazoa:
+    species:
+      - name: Caenorhabditis elegans
+        assembly: WBcel235
+        link: https://metazoa.ensembl.org/Caenorhabditis_elegans/Info/Index
+        image: Caenorhabditis_elegans.png
+      - name: Drosophila melanogaster
+        assembly: BDGP6.28
+        link: https://metazoa.ensembl.org/Drosophila_melanogaster/Info/Index
+        image: Drosophila_melanogaster.png
+      - name: Bombyx mori
+        assembly: ASM15162v1
+        link: https://metazoa.ensembl.org/Bombyx_mori/Info/Index
+        image: Bombyx_mori.png

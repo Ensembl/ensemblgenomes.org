@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include "head-metatags.njk" %}
+    <link rel="stylesheet" href="{{ 'home_styles.css' | assetPath }}">
+  </head>
+  <body>
+    {% include "header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "footer.njk" %}
+  </body>
+</html>

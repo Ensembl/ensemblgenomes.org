@@ -1,0 +1,7 @@
+@import './shared/normalize.scss';
+@import './shared/layout.scss';
+@import './shared/header.scss';
+@import './shared/footer.scss';
+
+@import './home/grid.scss';
+@import './home/panels.scss';
