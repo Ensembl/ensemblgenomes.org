@@ -11,7 +11,11 @@ module.exports = (env) => {
   return {
     mode:  env.production ? 'production' : 'development',
     entry: {
+      // scripts
       'home_script': path.resolve(__dirname, 'src', 'assets', 'scripts', 'index.js'),
+      'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.js'),
+
+      // styles
       'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.css')
     },
     output: {
@@ -27,7 +31,15 @@ module.exports = (env) => {
             {
               loader: 'babel-loader',
               options: {
-                presets: ["@babel/preset-env"],
+                presets: [
+                  [ "@babel/preset-env",
+                    {
+                      "useBuiltIns": "usage",
+                      "corejs": 3,
+                      "targets": "> 0.25%, not dead"
+                    }
+                  ]
+                ],
               },
             },
           ],
