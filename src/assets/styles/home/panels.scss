@@ -6,6 +6,7 @@ $plants-color: #407253;
 $bacteria-color: #70708d;
 $fungi-color: #725a4c;
 $metazoa-color: #015365;
+$ensembl-modern-color: #2378a9; // or #3d78a5 ?
 
 .home__division-panel {
   border: 1px solid $panel-border-color;
@@ -116,12 +117,15 @@ $metazoa-color: #015365;
 .home__modern-panel-header {
   height: 64px;
   padding-left: 24px;
-  background-color: #3d78a5;
+  background-color: $ensembl-modern-color;
   border-top-left-radius: $panel-border-radius;
   border-top-right-radius: $panel-border-radius;
 }
 
 .home__modern-panel-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 66px;
   border-style: solid;
   border-width: 1px;
@@ -130,4 +134,67 @@ $metazoa-color: #015365;
   border-bottom-color: $panel-border-color;
   border-bottom-left-radius: $panel-border-radius;
   border-bottom-right-radius: $panel-border-radius;
+  padding: 0 26px 0 34px;
+}
+
+.home__modern-panel-covid-body-logo {
+  display: flex;
+  align-items: center;
+}
+
+.home__modern-panel-covid-image {
+  width: 36px;
+}
+
+.home__modern-panel-covid-label {
+  font-weight: bold;
+}
+
+.home__modern-panel-goto-button {
+  text-decoration: none;
+  background-color: $ensembl-modern-color;
+  border-radius: 5px;
+  padding: 4px 8px;
+
+  &, &:visited {
+    color: white;
+  }
+}
+
+.home__search-panel {
+  grid-area: search;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 58px;
+  border: 1px solid $panel-border-color;
+  background-color: #ccd4e5;
+
+  form {
+    width: 40%;
+  }
+}
+
+.home__search-field {
+  width: 80%;
+}
+
+.home__goto-search-button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #323366;
+  color: white;
+  padding: 4px 8px;
+}
+
+.home__blog-panel {
+  grid-area: blog-link;
+  align-self: center;
+  display: flex;
+  align-items: center;
+} 
+
+.home__blog-panel-image {
+  height: 30px;
 }
