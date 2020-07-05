@@ -1,5 +1,7 @@
 import handleIdLookup from './handleIdLookup';
 
-const id = new URLSearchParams(window.location.search).get('id');
+const idRegex = /\/id\/([^\/]*)/; // match everything after "/id/" that is not a slash
 
-id && handleIdLookup(id);
+const id = window.location.pathname.match(idRegex)[1];
+
+handleIdLookup(id);
