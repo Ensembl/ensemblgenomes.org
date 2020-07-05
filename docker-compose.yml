@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    ports:
+      - 9000:80

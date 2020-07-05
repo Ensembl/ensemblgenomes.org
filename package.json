@@ -9,7 +9,7 @@
     "dev:eleventy": "eleventy --serve",
     "build": "npm run build:assets && npm run build:eleventy",
     "build:assets": "webpack --env.production",
-    "build:eleventy": "ELEVENTY_ENV=production eleventy --serve"
+    "build:eleventy": "ELEVENTY_ENV=production eleventy"
   },
   "keywords": [],
   "author": "",
