@@ -3,6 +3,7 @@
 stages:
   - build_static
   - build_docker
+  - deploy
 
 variables:
   EG_DOCKER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
@@ -33,5 +34,16 @@ Docker-Image:
     - docker push ${EG_DOCKER_IMAGE}
     - docker rmi ${EG_DOCKER_IMAGE}
     - docker logout $CI_REGISTRY
+  only:
+    - cicd
+
+Deploy:
+  stage: deploy
+  image: dockerhub.ebi.ac.uk/kamal/deploy-tools:0.1
+  script:
+    - sed -i "s#<DOCKER_IMAGE>#${EG_DOCKER_IMAGE}#g" ensemblgenomes_deployment.yaml
+    - kubectl apply -f ensemblgenomes_deployment.yaml
+  environment:
+    name : wp-hx-dev 
   only:
     - cicd
