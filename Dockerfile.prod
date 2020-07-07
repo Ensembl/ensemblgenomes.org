@@ -6,4 +6,4 @@ RUN rm /etc/nginx/conf.d/*
 
 COPY nginx/default.conf /etc/nginx/conf.d/
 
-COPY src/ensemblgenomes/dist /usr/share/nginx/html
+COPY dist /usr/share/nginx/html
