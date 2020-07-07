@@ -1,0 +1,36 @@
+
+
+stages:
+  - build_static
+  - build_docker
+
+variables:
+  EG_DOCKER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
+
+Build-Static:
+  stage: build_static
+  image: node:lts
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    name: static_assets
+    paths:
+    - src/ensemblgenomes/dist/
+  only:
+    - cicd
+
+Docker-Image:
+  stage: build_docker
+  image: docker
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build -t ${EG_DOCKER_IMAGE} -f Dockerfile.prod --no-cache .
+    - docker push ${EG_DOCKER_IMAGE}
+    - docker rmi ${EG_DOCKER_IMAGE}
+    - docker logout $CI_REGISTRY
+  only:
+    - cicd
