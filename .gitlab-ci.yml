@@ -13,8 +13,11 @@ Build-Static:
   script:
     - npm ci
     - npm run build
-    - ls -l
 
+  artifacts:
+    name: static_assets
+    paths:
+    - dist/
   only:
     - cicd
 
