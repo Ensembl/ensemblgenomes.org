@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ensemblgenomes-svc
+  labels:
+    app: ensemblgenomes-svc
+spec:
+  selector:
+    app: ensemblgenomes
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80

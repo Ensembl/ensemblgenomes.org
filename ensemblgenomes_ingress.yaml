@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ensemblgenomes-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: ensemblgenomes.review.ensembl.org
+    http:
+      paths:
+      - backend:
+          serviceName: ensemblgenomes-svc
+          servicePort: 80
+        path: /
