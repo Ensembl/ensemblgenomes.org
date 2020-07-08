@@ -12,11 +12,13 @@ module.exports = (env) => {
     mode:  env.production ? 'production' : 'development',
     entry: {
       // scripts
-      'home_script': path.resolve(__dirname, 'src', 'assets', 'scripts', 'index.js'),
-      'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.js'),
+      'home_script': path.resolve(__dirname, 'src', 'assets', 'scripts', 'index.ts'),
+      // 'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.js'),
+      'search': path.resolve(__dirname, 'src/assets/scripts/search/index.ts'),
 
       // styles
-      'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.css')
+      'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.scss'),
+      'search_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'search.scss')
     },
     output: {
       path: path.resolve(__dirname, 'dist', 'assets'),
@@ -25,13 +27,14 @@ module.exports = (env) => {
     module: {
       rules: [
         {
-          test: /\.js$/,
+          test: /\.ts$/,
           exclude: /node_modules/,
           use: [
             {
               loader: 'babel-loader',
               options: {
                 presets: [
+                  "@babel/typescript",
                   [ "@babel/preset-env",
                     {
                       "useBuiltIns": "usage",
@@ -45,7 +48,7 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.css$/,
+          test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -60,6 +63,10 @@ module.exports = (env) => {
         },
       ],
     },
+    resolve: {
+      extensions: ['.ts', '.js', '.json']
+    },
+    devtool: env.production ? 'source-map' : 'cheap-module-eval-source-map',
     plugins: [
       new CleanWebpackPlugin(),
       new MiniCssExtractPlugin({ filename: env.production ? `[name]-[hash].css` : `[name].css` }),

@@ -1,4 +1,6 @@
-const searchEBI = async (query) => {
+import { SearchResponse } from '../types/ebeyeResponse';
+
+const searchEBI = async (query: string) => {
   const [vertebratesResults, nonVertebratesResults] = await Promise.all([
     searchVertebrates(query),
     searchNonVertebrates(query)
@@ -11,17 +13,17 @@ const searchEBI = async (query) => {
   };
 };
 
-const searchVertebrates = async (query) => {
+const searchVertebrates = async (query: string) => {
   const url = buildSearchUrl('ensembl_gene', query);
   return await runSearch(url);
 };
 
-const searchNonVertebrates = async (query) => {
+const searchNonVertebrates = async (query: string) => {
   const url = buildSearchUrl('ensemblGenomes_gene', query);
   return await runSearch(url);
 };
 
-const runSearch = async (url) => {
+const runSearch = async (url: string): Promise<SearchResponse> => {
   return await fetch(url, {
     headers: {
       'Accept': 'application/json'
@@ -29,7 +31,7 @@ const runSearch = async (url) => {
   }).then(response => response.json());
 }
 
-const buildSearchUrl = (domain, query) =>
+const buildSearchUrl = (domain: string, query: string) =>
   `https://www.ebi.ac.uk/ebisearch/ws/rest/${domain}?query=${query}&fields=${getGeneFields()}`;
 
 // see the full available list of fields at https://www.ebi.ac.uk/ebisearch/metadata.ebi?db=ensembl_gene

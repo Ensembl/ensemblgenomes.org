@@ -1,0 +1,25 @@
+.search-result-item {
+  margin-bottom: 1rem;
+}
+
+.search-result-item__header {
+  border-bottom: 1px solid #ccc;
+}
+
+.search-result-item__header-section {
+  &:before {
+    content: '['
+  }
+  &:after {
+    content: ']'
+  }
+}
+
+.search-result-item__body {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+}
+
+.search-result-item__label {
+  font-weight: bold;
+}

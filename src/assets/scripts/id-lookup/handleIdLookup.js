@@ -45,6 +45,8 @@ const buildTranscriptUrl = (match) => {
   return `${host}${pathname}`;
 };
 
+//  http://bacteria.ensembl.org/homo_sapiens/Transcript/ProteinSummary_CCE57584?db=core;g=HUS2011_pI0088;protein=CCE57584
+
 const buildProteinUrl = (match) => {
   const division = getDivision(match);
   const speciesScientificName = match.data.fields.system_name;
