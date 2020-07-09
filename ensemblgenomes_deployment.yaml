@@ -1,0 +1,22 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata: 
+  name: ensemblgenomes-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ensemblgenomes
+    spec:
+      containers:
+      - name: ensemblgenomes
+        image: <DOCKER_IMAGE>
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: ensemblgenomes-configmap
+      imagePullSecrets:
+        - name: ensemblgenomes-pull-secret
