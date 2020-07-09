@@ -1,8 +1,6 @@
 FROM nginx:1.14
 
-EXPOSE 80 9000
-
-RUN rm /etc/nginx/conf.d/*
+EXPOSE 80
 
 COPY nginx/default.conf /etc/nginx/conf.d/
 
