@@ -13,7 +13,7 @@ module.exports = (env) => {
     entry: {
       // scripts
       'home_script': path.resolve(__dirname, 'src', 'assets', 'scripts', 'index.ts'),
-      // 'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.js'),
+      'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.ts'),
       'search': path.resolve(__dirname, 'src/assets/scripts/search/index.ts'),
 
       // styles

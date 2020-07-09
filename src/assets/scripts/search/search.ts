@@ -1,25 +1,33 @@
 import { SearchResponse } from '../types/ebeyeResponse';
 
-const searchEBI = async (query: string, page: number) => {
-  const [vertebratesResults, nonVertebratesResults] = await Promise.all([
-    searchVertebrates(query, page),
-    searchNonVertebrates(query, page)
-  ]);
+type SearchParams = {
+  query: string;
+  page?: number;
+  perPage?: number;
+};
+
+const searchEBI = async (params: SearchParams) => {
+  const {
+    query,
+    page = 1,
+    perPage = 10
+  } = params;
+  const nonVertebratesResults = await searchNonVertebrates(query, page, perPage);
 
   return {
     query,
-    vertebrates: vertebratesResults,
     nonVertebrates: nonVertebratesResults
   };
 };
 
-const searchVertebrates = async (query: string, page: number) => {
-  const url = buildSearchUrl('ensembl_gene', query, page);
-  return await runSearch(url);
-};
+// DEPRECATION: we aren't oging to search vertebrates from ensemblgenomes site
+// const searchVertebrates = async (query: string, page: number) => {
+//   const url = buildSearchUrl('ensembl_gene', query, page);
+//   return await runSearch(url);
+// };
 
-const searchNonVertebrates = async (query: string, page: number) => {
-  const url = buildSearchUrl('ensemblGenomes_gene', query, page);
+const searchNonVertebrates = async (query: string, page: number, perPage: number) => {
+  const url = buildSearchUrl('ensemblGenomes_gene', query, page, perPage);
   return await runSearch(url);
 };
 
@@ -31,8 +39,7 @@ const runSearch = async (url: string): Promise<SearchResponse> => {
   }).then(response => response.json());
 }
 
-// size=%s&start=%s
-const buildSearchUrl = (domain: string, query: string, page: number = 1, perPage: number = 10) => {
+const buildSearchUrl = (domain: string, query: string, page: number, perPage: number) => {
   const start = calculateOffset(page, perPage);
   const queryParams = `query=${query}&fields=${getGeneFields()}&start=${start}&size=${perPage}`;
   return `https://www.ebi.ac.uk/ebisearch/ws/rest/${domain}?${queryParams}`;

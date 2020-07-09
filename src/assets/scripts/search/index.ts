@@ -13,7 +13,7 @@ const main = async () => {
   const query = searchParams.get('query') as string;
   const page = getPage(searchParams);
 
-  const searchResults = await searchEBI(query, page);
+  const searchResults = await searchEBI({ query, page });
   console.log('searchResults', searchResults);
 
   const container = document.querySelector('main');
