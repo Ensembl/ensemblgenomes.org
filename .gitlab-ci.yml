@@ -20,7 +20,7 @@ Build-Static:
     paths:
     - dist/
   only:
-    - cicd
+    - master
 
 Docker-Image:
   stage: build_docker
@@ -35,7 +35,7 @@ Docker-Image:
     - docker rmi ${EG_DOCKER_IMAGE}
     - docker logout $CI_REGISTRY
   only:
-    - cicd
+    - master
 
 Deploy:
   stage: deploy
@@ -43,7 +43,8 @@ Deploy:
   script:
     - sed -i "s#<DOCKER_IMAGE>#${EG_DOCKER_IMAGE}#g" ensemblgenomes_deployment.yaml
     - kubectl apply -f ensemblgenomes_deployment.yaml
+  # Deploy to dev env so that we can have review.ensembl.org URL
   environment:
     name : wp-hx-dev 
   only:
-    - cicd
+    - master
