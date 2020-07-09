@@ -1,5 +1,8 @@
 import searchEBI from './search';
 import { renderSearchItem } from './templates/searchResults';
+import { renderPager } from './templates/pager';
+
+import { SearchResponse } from '../types/ebeyeResponse';
 
 const main = async () => {
   const searchParams = new URLSearchParams(window.location.search);
@@ -17,6 +20,7 @@ const main = async () => {
   const renderedResults = searchResults.nonVertebrates.entries.map(renderSearchItem);
 
   container?.append(...renderedResults);
+  container?.append(buildPager(query, searchResults.nonVertebrates, searchParams));
 };
 
 const getPage = (searchParams: URLSearchParams) => {
@@ -29,8 +33,22 @@ const getPage = (searchParams: URLSearchParams) => {
     }
   }
   return page;
-}
+};
+
+const buildPager = (query: string, response: SearchResponse, params: URLSearchParams) => {
+  const { hitCount } = response;
+  const page = getPage(params);
+  return renderPager({ query, page, perPage: 10, hitCount });
+};
 
 (async () => {
   await main();
 })();
+
+
+/**
+ window.onunload = function() {
+    myfun();
+    alert('Bye.');
+}
+ */
