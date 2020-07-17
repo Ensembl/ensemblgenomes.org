@@ -1,5 +1,10 @@
+main {
+  padding: 15px;
+}
+
 .search-result-item {
-  margin-bottom: 1rem;
+  padding: 2rem 0;
+  line-height: 2;
 }
 
 .search-result-item__header {
@@ -11,7 +16,11 @@
     content: '['
   }
   &:after {
-    content: ']'
+    content: ']';
+  }
+
+  a:not(:first-child) {
+    margin-left: 1rem;
   }
 }
 

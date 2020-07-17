@@ -1,10 +1,15 @@
 <div class="home__division-panel home__division-panel_protists">
-  <div>
-    Here be logo!
+  <div class="home__division-panel-logo-container">
+    <img src="/images/favicons/android-chrome-192x192.png" />
+    <div class="home__division-panel-logo-text home__division-panel-logo-text_protists">
+      EnsemblProtists
+    </div>
   </div>
-  {% for species in home.divisions.protists.species %}
-    {% include 'home/panel-species.njk' %}
-  {% endfor %}
+  <div class="home__division-panel-species-container">
+    {% for species in home.divisions.protists.species %}
+      {% include 'home/panel-species.njk' %}
+    {% endfor %}
+  </div>
   <a class="home__panel-goto-button home__panel-goto-button_protists" href="https://protists.ensembl.org/index.html">
     Go to Ensembl Protists
   </a>

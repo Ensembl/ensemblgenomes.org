@@ -9,8 +9,11 @@ $metazoa-color: #015365;
 $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 
 .home__division-panel {
+  display: grid;
+  grid-template-rows: [top] 62px [middle] 1fr [bottom] 60px;
   border: 1px solid $panel-border-color;
   border-radius: $panel-border-radius;
+  min-height: 298px;
   max-width: 456px;
   text-align: center;
 }
@@ -35,6 +38,40 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   grid-area: metazoa;
 }
 
+.home__division-panel-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0 24px;
+
+  img {
+    height: 32px;
+  }
+}
+
+.home__division-panel-logo-text {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 4px;
+
+  &_plants {
+    color: $plants-color;
+  }
+  &_protists {
+    color: $protists-color;
+  }
+  &_bacteria {
+    color: $bacteria-color;
+  }
+  &_fungi {
+    color: $fungi-color;
+  }
+  &_metazoa {
+    color: $metazoa-color;
+  }
+}
+
 .home__panel-species {
   display: grid;
   grid-template-columns: 36px 1fr;
@@ -54,11 +91,12 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 }
 
 .home__panel-goto-button {
+  align-self: start;
   display: inline-block;
+  justify-self: center;
   padding: 12px 30px;
   border-radius: 10px;
   text-decoration: none;
-  margin-top: 28px;
 
   &, &:visited {
     color: white;
@@ -105,6 +143,12 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   }
 }
 
+.home__modern-panel {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
 .home__modern-panel_covid {
   grid-area: sars;
 }
@@ -115,18 +159,57 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 
 
 .home__modern-panel-header {
-  height: 64px;
+  display: flex;
+  align-items: center;
+  height: 50px;
   padding-left: 24px;
   background-color: $ensembl-modern-color;
   border-top-left-radius: $panel-border-radius;
   border-top-right-radius: $panel-border-radius;
 }
 
+.home__modern-panel-logo {
+  display: grid;
+  grid-template-areas:
+      "image heading"
+      ". subheading";
+  grid-template-columns: min-content  min-content;
+  
+  &-image {
+    grid-area: image;
+
+    img {
+      height: 32px;
+    }
+  }
+
+  &-heading {
+    grid-area: heading;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+    align-self: center;
+  }
+
+  &-subheading {
+    grid-area: subheading;
+    color: white;
+    font-size: 10px;
+    font-weight: 300;
+    text-align: right;
+    transform: translateY(-60%);
+
+    .home__modern-panel_rapid & {
+      font-style: italic;
+    }
+  }
+}
+
 .home__modern-panel-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 66px;
   border-style: solid;
   border-width: 1px;
   border-left-color: $panel-border-color;
@@ -186,6 +269,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   background-color: #323366;
   color: white;
   padding: 4px 8px;
+  cursor: pointer;
 }
 
 .home__blog-panel {
@@ -197,4 +281,5 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 
 .home__blog-panel-image {
   height: 30px;
+  margin-right: 20px;
 }
