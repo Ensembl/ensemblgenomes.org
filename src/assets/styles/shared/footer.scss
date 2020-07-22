@@ -1,7 +1,13 @@
+@import './variables.scss';
+
 footer {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 50px;
+  width: 100%;
+  max-width: $max-content-width;
+  margin: 20px auto 0;
 }
 
 .footer__embl-ebi-logo {
