@@ -11,8 +11,17 @@ main {
 
 .home-top-grid {
   display: grid;
-  grid-template-columns: [blog] 1fr [search] 2fr;
   padding-top: 20px;
+  
+  @media (min-width: 900px) {
+    grid-template-columns: [blog] 1fr [search] 2fr;
+    grid-column-gap: 32px;
+  }
+
+  @media (max-width: 899px) {
+    grid-template-rows: [search] auto [blog] auto;
+    grid-row-gap: 20px;
+  }
 }
 
 .home-bottom-grid {

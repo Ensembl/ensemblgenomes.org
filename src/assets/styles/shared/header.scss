@@ -24,9 +24,17 @@ header {
 
 .header__middle {
   grid-column: middle;
+
+  @media (max-width: 799px) {
+    display: none;
+  }
 }
 
 .header__right {
   grid-column: right;
   margin-left: 120px;
+
+  @media (max-width: 799px) {
+    margin-left: 0;
+  }
 }

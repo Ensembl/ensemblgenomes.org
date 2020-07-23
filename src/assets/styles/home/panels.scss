@@ -266,6 +266,11 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
       margin-right: 24px;
     }
   }
+
+  @media (max-width: 899px) {
+    grid-column: 1/2;
+    grid-row: search;
+  }
 }
 
 .home__goto-search-button {
@@ -284,6 +289,12 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   align-self: center;
   display: flex;
   align-items: center;
+
+  @media (max-width: 899px) {
+    grid-column: 1/2;
+    grid-row: blog;
+    margin-left: 34px;
+  }
 } 
 
 .home__blog-panel-image {
