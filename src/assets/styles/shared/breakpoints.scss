@@ -1,0 +1,7 @@
+@import './variables.scss';
+
+$breakpoints-large: "(min-width: #{$three-home-cards-width-padded})";
+$breakpoints-middle: "(min-width: #{$two-home-cards-width-padded}) and (max-width: #{$three-home-cards-width-padded})";
+$breakpoints-small: "(min-width: #{$one-home-card-width-padded}) and (max-width: #{$two-home-cards-width-padded})";
+$breakpoints-x-small: "(max-width: #{$one-home-card-width-padded})";
+$breakpoints-small-all: "(max-width: #{$two-home-cards-width-padded})";

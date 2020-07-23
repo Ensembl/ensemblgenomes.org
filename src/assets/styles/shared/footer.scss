@@ -6,12 +6,19 @@ footer {
   align-items: center;
   height: 50px;
   width: 100%;
-  max-width: $max-content-width;
+  max-width: $three-home-cards-width;
+  padding: 0 $side-padding;
   margin: 20px auto 0;
+}
+
+.footer__left {
+  display: flex;
+  align-items: center;
 }
 
 .footer__embl-ebi-logo {
   height: 26px;
+  margin-right: 24px;
 }
 
 .footer__elixir-logo {

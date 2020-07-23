@@ -1,8 +1,12 @@
-/*
-On home page:
-card-width: 460px
-gap width: 22px
-therefore, max width of the content is 460 * 3 + 22 * 2 = 1424px
-*/
+$home-card-width: 460px;
+$home-column-gap-width: 22px;
+$side-padding: 30px;
 
-$max-content-width: 1424px;
+// combined widths of cards + gaps between them, WITHOUT padding on the sides
+$three-home-cards-width: 3 * $home-card-width + 2 * $home-column-gap-width;
+$two-home-cards-width: 2 * $home-card-width + $home-column-gap-width;
+
+// combined widths of cards + gaps between them, WITH padding on the sides
+$three-home-cards-width-padded: 3 * $home-card-width + 2 * $home-column-gap-width + 2 * $side-padding;
+$two-home-cards-width-padded: 2 * $home-card-width + $home-column-gap-width + 2 * $side-padding;
+$one-home-card-width-padded: $home-card-width + 2 * $side-padding;

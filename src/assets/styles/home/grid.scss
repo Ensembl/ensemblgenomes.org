@@ -1,8 +1,11 @@
 @import '../shared/variables.scss';
+@import '../shared/breakpoints.scss';
 
 main {
   width: 100%;
-  max-width: $max-content-width;
+  max-width: $three-home-cards-width;
+  min-width: $one-home-card-width-padded;
+  padding: 0 $side-padding;
   margin: 0 auto;
 }
 
@@ -11,7 +14,6 @@ main {
   grid-template-columns: [blog] 1fr [search] 2fr;
   padding-top: 20px;
 }
-
 
 .home-bottom-grid {
   display: grid;
@@ -27,4 +29,32 @@ main {
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   align-items: start;
+
+  @media #{$breakpoints-middle} {
+    max-width: $two-home-cards-width;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "sars plants"
+      "rapid-release plants"
+      "metazoa protists"
+      "metazoa protists"
+      "fungi bacteria"
+      "fungi bacteria";
+  }
+
+  @media #{$breakpoints-small-all} {
+    max-width: $home-card-width;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 140px 140px repeat(5, 300px);
+    grid-template-areas:
+      "sars"
+      "rapid-release"
+      "plants"
+      "metazoa"
+      "protists"
+      "fungi"
+      "bacteria";
+  }
 }

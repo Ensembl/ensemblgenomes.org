@@ -3,19 +3,30 @@
 header {
   height: 75px;
   background-color: #333366;
-  padding-left: 32px;
+  padding: 0 $side-padding;
   color: white;
 }
 
 .header__inner {
-  max-width: $max-content-width;
+  max-width: $three-home-cards-width;;
   margin: 0 auto;
   height: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: [logo] auto [middle] 1fr [right] auto;
   align-items: center;
 }
 
 .header__logo {
+  grid-column: logo;
   margin-top: -10px;
   margin-right: 38px;
+}
+
+.header__middle {
+  grid-column: middle;
+}
+
+.header__right {
+  grid-column: right;
+  margin-left: 120px;
 }
