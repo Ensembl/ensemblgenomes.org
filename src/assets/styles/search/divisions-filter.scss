@@ -1,0 +1,11 @@
+.divisions-filter {
+  grid-area: divisions;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  white-space: nowrap;
+  padding: 10px 2rem;
+
+  label {
+    margin-right: 0.6rem;
+  }
+}

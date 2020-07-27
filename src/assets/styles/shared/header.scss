@@ -2,13 +2,14 @@
 
 header {
   height: 75px;
+  min-width: $one-home-card-width-padded;
   background-color: #333366;
   padding: 0 $side-padding;
   color: white;
 }
 
 .header__inner {
-  max-width: $three-home-cards-width;;
+  max-width: $three-home-cards-width;
   margin: 0 auto;
   height: 100%;
   display: grid;
@@ -36,5 +37,9 @@ header {
 
   @media (max-width: 799px) {
     margin-left: 0;
+  }
+
+  a, a:visited {
+    color: white;
   }
 }

@@ -1,0 +1,25 @@
+$panel-border-color: #c5c6e8;
+
+.search-panel {
+  grid-area: search;
+  height: 58px;
+  border: 1px solid $panel-border-color;
+  background-color: #ccd4e5;
+  padding-right: 30px;
+
+  form {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    input {
+      width: 40%;
+      margin-right: 0.6rem;
+    }
+
+    label {
+      margin-right: 24px;
+    }
+  }
+}

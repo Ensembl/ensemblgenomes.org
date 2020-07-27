@@ -34,8 +34,6 @@ export const renderPager = (params: PagerParams) => {
     }
   }).join(' ');
 
-// « first ‹ previous
-// next › last »
   const spanner = `<span class="pager__spanner">...</spam>`
   const toFirst = isFirstPageShown
     ? ''
@@ -98,6 +96,10 @@ const getPageList = (params: PagerParams) => {
 };
 
 const buildSearchPageUrl = (query: string, page: number) => {
-  const pageParam = page === 1 ? '' : `&page=${page}`;
-  return `/search/?query=${query}${pageParam}`;
+  const url = new URL(window.location.href);
+  if (page !== 1) {
+    url.searchParams.set('page', `${page}`);
+  }
+
+  return url.href;
 }

@@ -1,6 +1,8 @@
 import searchEBI from './search';
-import { renderSearchItem } from './templates/searchResults';
-import { renderPager } from './templates/pager';
+import { renderSearchField } from './components/searchPanel';
+import { renderDivisions } from './components/divisions';
+import { renderSearchItem } from './components/searchResults';
+import { renderPager } from './components/pager';
 
 import { SearchResponse } from '../types/ebeyeResponse';
 
@@ -11,14 +13,15 @@ const main = async () => {
     return;
   }
   const query = searchParams.get('query') as string;
+  const division = searchParams.get('division');
   const page = getPage(searchParams);
 
-  const searchResults = await searchEBI({ query, page });
-  console.log('searchResults', searchResults);
+  const searchResults = await searchEBI({ query, division, page });
 
   const container = document.querySelector('main');
   const renderedResults = searchResults.nonVertebrates.entries.map(renderSearchItem);
 
+  container?.appendChild(renderTopFields());
   container?.append(...renderedResults);
   container?.append(buildPager(query, searchResults.nonVertebrates, searchParams));
 };
@@ -33,6 +36,14 @@ const getPage = (searchParams: URLSearchParams) => {
     }
   }
   return page;
+};
+
+const renderTopFields = () => {
+  const container = document.createElement('div');
+  container.classList.add('top-grid');
+  container?.appendChild(renderSearchField());
+  container?.appendChild(renderDivisions());
+  return container;
 };
 
 const buildPager = (query: string, response: SearchResponse, params: URLSearchParams) => {

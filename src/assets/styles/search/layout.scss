@@ -1,0 +1,18 @@
+@import '../shared/variables.scss';
+
+main {
+  width: 100%;
+  max-width: $three-home-cards-width;
+  min-width: $one-home-card-width-padded;
+  padding: 0 $side-padding;
+  margin: 0 auto;
+}
+
+.top-grid {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 0.6em;
+  grid-template-areas:
+    "search search"
+    "divisions .";
+}
