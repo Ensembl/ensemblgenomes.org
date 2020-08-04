@@ -1,6 +1,7 @@
 import searchEBI from './search';
 import { renderSearchField } from './components/searchPanel';
 import { renderDivisions } from './components/divisions';
+import { renderHitCount } from './components/hitCount';
 import { renderSearchItem } from './components/searchResults';
 import { renderPager } from './components/pager';
 
@@ -17,11 +18,12 @@ const main = async () => {
   const page = getPage(searchParams);
 
   const searchResults = await searchEBI({ query, division, page });
+  console.log('searchResults', searchResults);
 
   const container = document.querySelector('main');
   const renderedResults = searchResults.nonVertebrates.entries.map(renderSearchItem);
 
-  container?.appendChild(renderTopFields());
+  container?.appendChild(renderTopFields(searchResults));
   container?.append(...renderedResults);
   container?.append(buildPager(query, searchResults.nonVertebrates, searchParams));
 };
@@ -38,11 +40,13 @@ const getPage = (searchParams: URLSearchParams) => {
   return page;
 };
 
-const renderTopFields = () => {
+const renderTopFields = (searchResults: { query: string, nonVertebrates: SearchResponse }) => {
+  const { query, nonVertebrates: { hitCount } } = searchResults;
   const container = document.createElement('div');
   container.classList.add('top-grid');
   container?.appendChild(renderSearchField());
   container?.appendChild(renderDivisions());
+  container?.appendChild(renderHitCount(query, hitCount));
   return container;
 };
 
