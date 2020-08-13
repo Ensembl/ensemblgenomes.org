@@ -4,11 +4,13 @@ import { buildGeneUrl, buildTranscriptUrl, buildProteinUrl } from '../search/url
 
 const handleIdLookup = async (query: string) => {
   const searchResults = await searchEBI({query, page: 1, perPage: 20});
+  const { nonVertebrates } = searchResults;
   const exactMatch = getExactIdMatch(searchResults);
 
-  console.log('exactMatch', exactMatch);
   if (exactMatch) {
     redirectTo(exactMatch);
+  } else if (nonVertebrates.hitCount > 0) {
+    redirectToSearch(query);
   }
 };
 
@@ -27,5 +29,12 @@ const redirectTo = (match: Match) => {
     window.location.href = url;
   }
 };
+
+const redirectToSearch = (query: string) => {
+  const url = new URL(window.location.href);
+  url.pathname = '/search/';
+  url.searchParams.set('query', query);
+  window.location.href = url.toString();
+}
 
 export default handleIdLookup;

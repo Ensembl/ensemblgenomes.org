@@ -6,7 +6,11 @@ type PagerParams = {
 };
 
 export const renderPager = (params: PagerParams) => {
-  const { query } = params;
+  const { query, perPage, hitCount } = params;
+  if (hitCount < perPage) {
+    return null;
+  }
+
   const pagerElement = document.createElement('div');
   pagerElement.classList.add('pager');
   const {

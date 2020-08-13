@@ -12,7 +12,7 @@ module.exports = (env) => {
     mode:  env.production ? 'production' : 'development',
     entry: {
       // scripts
-      'home_script': path.resolve(__dirname, 'src', 'assets', 'scripts', 'index.ts'),
+      'home_script': path.resolve(__dirname, 'src/assets/scripts/home/index.ts'),
       'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.ts'),
       'search': path.resolve(__dirname, 'src/assets/scripts/search/index.ts'),
 

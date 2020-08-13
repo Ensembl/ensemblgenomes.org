@@ -18,14 +18,14 @@ const main = async () => {
   const page = getPage(searchParams);
 
   const searchResults = await searchEBI({ query, division, page });
-  console.log('searchResults', searchResults);
 
   const container = document.querySelector('main');
   const renderedResults = searchResults.nonVertebrates.entries.map(renderSearchItem);
+  const pager = buildPager(query, searchResults.nonVertebrates, searchParams);
 
   container?.appendChild(renderTopFields(searchResults));
   container?.append(...renderedResults);
-  container?.append(buildPager(query, searchResults.nonVertebrates, searchParams));
+  pager && container?.append(pager);
 };
 
 const getPage = (searchParams: URLSearchParams) => {
