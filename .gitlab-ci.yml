@@ -45,13 +45,26 @@ Docker-Image:
     - master
 
 Deploy:
-  stage: deploy
-  image: dockerhub.ebi.ac.uk/kamal/deploy-tools:0.1
-  script:
-    - sed -i "s#<DOCKER_IMAGE>#${EG_DOCKER_IMAGE}#g" ensemblgenomes_deployment.yaml
-    - kubectl apply -f ensemblgenomes_deployment.yaml
+  extends: .deploy
   # Deploy to dev env so that we can have review.ensembl.org URL
   environment:
     name : wp-hx-dev 
+  only:
+    - master
+
+# Deploy to WP-HH cluster (Primary)
+Deploy:WP-HH:
+  extends: .deploy
+  environment:
+    name : wp-hh-live
+  only:
+    - master
+
+# Deploy to WP-HX cluster (Fallbak)
+Deploy:WP-HX:
+  extends: .deploy
+  # Deploy to dev env so that we can have review.ensembl.org URL
+  environment:
+    name : wp-hx-live
   only:
     - master
