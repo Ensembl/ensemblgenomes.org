@@ -8,6 +8,13 @@ stages:
 variables:
   EG_DOCKER_IMAGE: ${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}
 
+.deploy:
+  stage: deploy
+  image: dockerhub.ebi.ac.uk/kamal/deploy-tools:0.1
+  script:
+    - sed -i "s#<DOCKER_IMAGE>#${EG_DOCKER_IMAGE}#g" ensemblgenomes_deployment.yaml
+    - kubectl apply -f ensemblgenomes_deployment.yaml
+
 Build-Static:
   stage: build_static
   image: node:lts
