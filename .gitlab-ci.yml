@@ -63,7 +63,6 @@ Deploy:WP-HH:
 # Deploy to WP-HX cluster (Fallbak)
 Deploy:WP-HX:
   extends: .deploy
-  # Deploy to dev env so that we can have review.ensembl.org URL
   environment:
     name : wp-hx-live
   only:
