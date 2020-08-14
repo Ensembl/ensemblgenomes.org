@@ -1,4 +1,5 @@
-
+# master -> ensemblgenomes.org -> WP HH/HX (eg-static)
+# all other branches -> review apps -> WP HX (ensembl-dev)
 
 stages:
   - build_static
@@ -26,8 +27,6 @@ Build-Static:
     name: static_assets
     paths:
     - dist/
-  only:
-    - master
 
 Docker-Image:
   stage: build_docker
@@ -41,15 +40,13 @@ Docker-Image:
     - docker push ${EG_DOCKER_IMAGE}
     - docker rmi ${EG_DOCKER_IMAGE}
     - docker logout $CI_REGISTRY
-  only:
-    - master
 
 Deploy:
   extends: .deploy
   # Deploy to dev env so that we can have review.ensembl.org URL
   environment:
     name : wp-hx-dev 
-  only:
+  except:
     - master
 
 # Deploy to WP-HH cluster (Primary)
@@ -60,7 +57,7 @@ Deploy:WP-HH:
   only:
     - master
 
-# Deploy to WP-HX cluster (Fallbak)
+# Deploy to WP-HX cluster (Fallback)
 Deploy:WP-HX:
   extends: .deploy
   environment:
