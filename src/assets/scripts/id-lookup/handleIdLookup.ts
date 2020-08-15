@@ -8,6 +8,7 @@ const handleIdLookup = async (query: string) => {
   const exactMatch = getExactIdMatch(searchResults);
 
   if (exactMatch) {
+    showRedirectMessage();
     redirectTo(exactMatch);
   } else if (nonVertebrates.hitCount > 0) {
     redirectToSearch(query);
@@ -15,6 +16,22 @@ const handleIdLookup = async (query: string) => {
     redirectTo404();
   }
 };
+
+const showRedirectMessage = () => {
+  const container = document.createElement('div');
+  container.innerHTML = `
+    <span>
+      Please wait while you are being redirected...
+    </span>
+  `;
+  container.style.cssText = `
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  `;
+  document.body.appendChild(container);
+}
 
 const redirectTo = (match: Match) => {
   let url;
