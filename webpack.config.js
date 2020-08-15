@@ -18,7 +18,8 @@ module.exports = (env) => {
 
       // styles
       'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.scss'),
-      'search_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'search.scss')
+      'search_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'search.scss'),
+      '404_styles': path.resolve(__dirname, 'src', 'assets', 'styles', '404.scss')
     },
     output: {
       path: path.resolve(__dirname, 'dist', 'assets'),

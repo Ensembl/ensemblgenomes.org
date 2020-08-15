@@ -1,0 +1,56 @@
+@import './shared/normalize.scss';
+@import './shared/layout.scss';
+@import './shared/header.scss';
+@import './shared/footer.scss';
+
+@import './shared/variables.scss';
+
+$panel-border-color: #c5c6e8;
+
+main {
+  width: 100%;
+  max-width: $three-home-cards-width;
+  min-width: $one-home-card-width-padded;
+  padding: 0 $side-padding;
+  margin: 0 auto;
+}
+
+// TODO: extract search-panel css into its own component
+.home__search-panel {
+  height: 58px;
+  border: 1px solid $panel-border-color;
+  background-color: #ccd4e5;
+  padding-right: 30px;
+  margin: 20px 0 40px;
+
+  form {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    input {
+      width: 40%;
+    }
+
+    label {
+      margin-right: 24px;
+    }
+  }
+}
+
+.home__goto-search-button {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #323366;
+  color: white;
+  padding: 4px 8px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: bold;
+}

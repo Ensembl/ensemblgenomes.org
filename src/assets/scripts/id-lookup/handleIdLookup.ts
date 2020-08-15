@@ -11,6 +11,8 @@ const handleIdLookup = async (query: string) => {
     redirectTo(exactMatch);
   } else if (nonVertebrates.hitCount > 0) {
     redirectToSearch(query);
+  } else {
+    redirectTo404();
   }
 };
 
@@ -35,6 +37,10 @@ const redirectToSearch = (query: string) => {
   url.pathname = '/search/';
   url.searchParams.set('query', query);
   window.location.href = url.toString();
+}
+
+const redirectTo404 = () => {
+  window.location.href = '/404/';
 }
 
 export default handleIdLookup;
