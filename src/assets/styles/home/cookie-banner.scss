@@ -1,0 +1,38 @@
+.cookie-banner {
+  min-height: 60px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+
+  a, a:visited {
+    color: #ffc107;
+  }
+}
+
+.cookie-banner__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 6px 52px;
+  line-height: 1.4;
+}
+
+.cookie-banner__button-container {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+}
+
+.cookie-banner__button {
+  width: 90px;
+  margin-right: 12px;
+  background-color: #666;
+  color: white;
+  border: none;
+  outline: none;
+}

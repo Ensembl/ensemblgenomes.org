@@ -59,11 +59,3 @@ const buildPager = (query: string, response: SearchResponse, params: URLSearchPa
 (async () => {
   await main();
 })();
-
-
-/**
- window.onunload = function() {
-    myfun();
-    alert('Bye.');
-}
- */
