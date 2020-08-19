@@ -63,4 +63,4 @@ Deploy:WP-HX:
   environment:
     name : wp-hx-egorg-static-live
   only:
-    - master
+    - change_deploy_env
