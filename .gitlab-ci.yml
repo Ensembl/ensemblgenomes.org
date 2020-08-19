@@ -55,7 +55,7 @@ Deploy:WP-HH:
   environment:
     name : wp-hh-egorg-static-live
   only:
-    - change_deploy_env
+    - master
 
 # Deploy to WP-HX cluster (Fallback)
 Deploy:WP-HX:
@@ -63,4 +63,4 @@ Deploy:WP-HX:
   environment:
     name : wp-hx-egorg-static-live
   only:
-    - change_deploy_env
+    - master
