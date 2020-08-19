@@ -53,7 +53,7 @@ Deploy:
 Deploy:WP-HH:
   extends: .deploy
   environment:
-    name : wp-hh-live
+    name : wp-hh-egorg-static-live
   only:
     - master
 
@@ -61,6 +61,6 @@ Deploy:WP-HH:
 Deploy:WP-HX:
   extends: .deploy
   environment:
-    name : wp-hx-live
+    name : wp-hx-egorg-static-live
   only:
     - master
