@@ -14,6 +14,7 @@ module.exports = (env) => {
       // scripts
       'home_script': path.resolve(__dirname, 'src/assets/scripts/home/index.ts'),
       'id_lookup': path.resolve(__dirname, 'src/assets/scripts/id-lookup/index.ts'),
+      'genetree_id_lookup': path.resolve(__dirname, 'src/assets/scripts/genetree-id-lookup/index.ts'),
       'search': path.resolve(__dirname, 'src/assets/scripts/search/index.ts'),
 
       // styles
