@@ -17,7 +17,7 @@ const handleIdLookup = async (query: string) => {
   }
 };
 
-const showRedirectMessage = () => {
+export const showRedirectMessage = () => {
   const container = document.createElement('div');
   container.innerHTML = `
     <span>
