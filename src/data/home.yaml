@@ -30,14 +30,14 @@ divisions:
   bacteria:
     species:
       - name: Streptococcus pneumoniae
-        assembly: Spn.str2298_v1.0
-        link: https://bacteria.ensembl.org/Streptococcus_pneumoniae/Info/Index
+        assembly: ASM688v1
+        link: https://bacteria.ensembl.org/Streptococcus_pneumoniae_tigr4_gca_000006885/Info/Index
       - name: Escherichia coli
-        assembly: AL505-MS
-        link: https://bacteria.ensembl.org/Escherichia_coli_gca_001499595/Info/Index
+        assembly: ASM584v2
+        link: https://bacteria.ensembl.org/Escherichia_coli_str_k_12_substr_mg1655_gca_000005845/Info/Index
       - name: Bacillus subtilis
         assembly: ASM73511v1
-        link: https://bacteria.ensembl.org/Bacillus_subtilis_gca_000735115/Info/Index
+        link: https://bacteria.ensembl.org/Bacillus_subtilis_subsp_subtilis_str_168_gca_000009045/Info/Index
   fungi:
     species:
       - name: Magnaporthe oryzae
