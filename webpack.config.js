@@ -1,11 +1,9 @@
 const path = require('path');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.APP_ENV === 'development';
-
-const baseFilename = isDev ? 'index' : 'index.[contenthash]';
 
 module.exports = (env) => {
   return {
@@ -24,7 +22,7 @@ module.exports = (env) => {
     },
     output: {
       path: path.resolve(__dirname, 'dist', 'assets'),
-      filename: env.production ? `[name]-[hash].js` : `[name].js`,
+      filename: env.production ? `[name]-[contenthash].js` : `[name].js`,
     },
     module: {
       rules: [
@@ -68,11 +66,11 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.ts', '.js', '.json']
     },
-    devtool: env.production ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: env.production ? 'source-map' : 'eval-cheap-module-source-map',
     plugins: [
       new CleanWebpackPlugin(),
-      new MiniCssExtractPlugin({ filename: env.production ? `[name]-[hash].css` : `[name].css` }),
-      new ManifestPlugin({ publicPath: '/assets/' })
+      new MiniCssExtractPlugin({ filename: env.production ? `[name]-[contenthash].css` : `[name].css` }),
+      new WebpackManifestPlugin({ publicPath: '/assets/' })
     ],
   };
 };

@@ -6,9 +6,9 @@ module.exports = function(eleventyConfig) {
   const outputDir = 'dist';
   const assetDir = 'assets';
 
-  eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
   eleventyConfig.addPassthroughCopy({"src/assets/images": `images`});
-  eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+  eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 
   eleventyConfig.addFilter('assetPath', function(value) {
     if (process.env.ELEVENTY_ENV === 'production') {
