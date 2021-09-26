@@ -16,11 +16,15 @@ footer {
   align-items: center;
 }
 
+.footer__right {
+  height: 100%;
+}
+
 .footer__embl-ebi-logo {
   height: 26px;
   margin-right: 24px;
 }
 
 .footer__elixir-logo {
-  height: 50px;
+  height: 100%;
 }
