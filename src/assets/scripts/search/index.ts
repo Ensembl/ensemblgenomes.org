@@ -44,9 +44,9 @@ const renderTopFields = (searchResults: { query: string, nonVertebrates: SearchR
   const { query, nonVertebrates: { hitCount } } = searchResults;
   const container = document.createElement('div');
   container.classList.add('top-grid');
-  container?.appendChild(renderSearchField({ query }));
-  container?.appendChild(renderDivisions());
-  container?.appendChild(renderHitCount(query, hitCount));
+  container.appendChild(renderSearchField({ query }));
+  container.appendChild(renderDivisions());
+  container.appendChild(renderHitCount(query, hitCount));
   return container;
 };
 
