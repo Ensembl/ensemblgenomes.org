@@ -1,6 +1,6 @@
 import { readDivisionFromUrl } from './divisions';
 
-export const renderSearchField = () => {
+export const renderSearchField = ({ query }: { query: string }) => {
   const searchField = document.createElement('div');
   searchField.innerHTML = `
     <form>
@@ -16,6 +16,8 @@ export const renderSearchField = () => {
   searchField.classList.add('search-panel');
   searchField.querySelector('form')
     ?.addEventListener('submit', onSearchSubmit);
+  const searchInput = searchField.querySelector('input') as HTMLInputElement;
+  searchInput.value = query; // setting the value on the input field imperatively rather than in the template above to avoid edge cases such as quotes
   
   return searchField;
 };
