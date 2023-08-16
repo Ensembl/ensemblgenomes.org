@@ -1,13 +1,16 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: ensemblgenomes-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      ensembl.web.app.name: ensemblgenomes
   template:
     metadata:
       labels:
-        app: ensemblgenomes
+        ensembl.web.app.name: ensemblgenomes
     spec:
       containers:
       - name: ensemblgenomes
@@ -17,6 +20,6 @@ spec:
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-            name: ensemblgenomes-configmap
+            name: proxy-configmap
       imagePullSecrets:
-        - name: ensemblgenomes-pull-secret
+        - name: ensemblweb-pull-secre
