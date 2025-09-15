@@ -63,6 +63,6 @@ divisions:
         link: https://metazoa.ensembl.org/Drosophila_melanogaster/Info/Index
         image: Drosophila_melanogaster.png
       - name: Bombyx mori
-        assembly: ASM15162v1
-        link: https://metazoa.ensembl.org/Bombyx_mori/Info/Index
-        image: Bombyx_mori.png
+        assembly: ASM3026992v2
+        link: https://metazoa.ensembl.org/Bombyx_mori_gcf030269925v1rs/Info/Index
+        image: Bombyx_mori_gcf030269925v1rs.png
