@@ -1,13 +1,11 @@
-@import './variables.scss';
-
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   width: 100%;
-  max-width: $three-home-cards-width;
-  padding: 0 $side-padding;
+  max-width: var(--three-home-cards-width);
+  padding: 0 var(--side-padding);
   margin: 20px auto 0;
 }
 

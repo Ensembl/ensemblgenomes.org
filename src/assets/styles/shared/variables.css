@@ -1,0 +1,26 @@
+:root {
+  --home-card-width: 460px;
+  --home-column-gap-width: 22px;
+  --side-padding: 30px;
+
+  /* combined widths of cards + gaps between them, WITHOUT padding on the sides */
+  --three-home-cards-width: calc(3 * var(--home-card-width) + 2 * var(--home-column-gap-width));
+  --two-home-cards-width: calc(2 * var(--home-card-width) + var(--home-column-gap-width));
+
+  /* combined widths of cards + gaps between them, WITH padding on the sides */
+  --three-home-cards-width-padded: calc(3 * var(--home-card-width) + 2 * var(--home-column-gap-width) + 2 * var(--side-padding));
+  --two-home-cards-width-padded: calc(2 * var(--home-card-width) + var(--home-column-gap-width) + 2 * var(--side-padding));
+  --one-home-card-width-padded: calc(var(--home-card-width) + 2 * var(--side-padding));
+
+
+  /* colours and whatnot */
+  --panel-border-color: #c5c6e8;
+  --panel-border-radius: 10px;
+
+  --protists-color: #714486;
+  --plants-color: #407253;
+  --bacteria-color: #70708d;
+  --fungi-color: #725a4c;
+  --metazoa-color: #015365;
+  --ensembl-modern-color: #2378a9; 
+}

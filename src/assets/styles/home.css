@@ -1,0 +1,8 @@
+@import './shared/normalize.css';
+@import './shared/layout.css';
+@import './shared/header.css';
+@import './shared/footer.css';
+
+@import './home/grid.css';
+@import './home/panels.css';
+@import './home/cookie-banner.css';

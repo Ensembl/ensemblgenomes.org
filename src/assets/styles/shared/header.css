@@ -1,15 +1,13 @@
-@import './variables.scss';
-
 header {
   height: 75px;
-  min-width: $one-home-card-width-padded;
+  min-width: var(--one-home-card-width-padded);
   background-color: #333366;
-  padding: 0 $side-padding;
+  padding: 0 var(--side-padding);
   color: white;
 }
 
 .header__inner {
-  max-width: $three-home-cards-width;
+  max-width: var(--three-home-cards-width);
   margin: 0 auto;
   height: 100%;
   display: grid;

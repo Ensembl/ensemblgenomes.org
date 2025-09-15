@@ -1,24 +1,22 @@
-@import './shared/normalize.scss';
-@import './shared/layout.scss';
-@import './shared/header.scss';
-@import './shared/footer.scss';
+@import './shared/normalize.css';
+@import './shared/layout.css';
+@import './shared/header.css';
+@import './shared/footer.css';
 
-@import './shared/variables.scss';
-
-$panel-border-color: #c5c6e8;
+@import './shared/variables.css';
 
 main {
   width: 100%;
-  max-width: $three-home-cards-width;
-  min-width: $one-home-card-width-padded;
-  padding: 0 $side-padding;
+  max-width: var(--three-home-cards-width);
+  min-width: var(--one-home-card-width-padded);
+  padding: 0 var(--side-padding);
   margin: 0 auto;
 }
 
-// TODO: extract search-panel css into its own component
+/* TODO: extract search-panel css into its own component */
 .home__search-panel {
   height: 58px;
-  border: 1px solid $panel-border-color;
+  border: 1px solid var(--panel-border-color);
   background-color: #ccd4e5;
   padding-right: 30px;
   margin: 20px 0 40px;
