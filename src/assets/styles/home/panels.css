@@ -98,7 +98,6 @@
 
   &:hover {
     background-color: hsl(from var(--protists-color) h s calc(l - 5));
-    /* background-color: darken($protists-color, 5%); */
   }
 }
 
@@ -107,7 +106,6 @@
 
   &:hover {
     background-color: hsl(from var(--plants-color) h s calc(l - 5));
-    /* background-color: darken($plants-color, 5%); */
   }
 }
 
@@ -116,7 +114,6 @@
 
   &:hover {
     background-color: hsl(from var(--bacteria-color) h s calc(l - 5));
-    /* background-color: darken($bacteria-color, 5%); */
   }
 }
 
@@ -125,7 +122,6 @@
 
   &:hover {
     background-color: hsl(from var(--fungi-color) h s calc(l - 5));
-    /* background-color: darken($fungi-color, 5%); */
   }
 }
 
@@ -134,7 +130,6 @@
 
   &:hover {
     background-color: hsl(from var(--metazoa-color) h s calc(l - 5));
-    /* background-color: darken($metazoa-color, 5%); */
   }
 }
 
