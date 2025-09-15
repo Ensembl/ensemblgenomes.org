@@ -1,11 +1,10 @@
-@import '../shared/variables.scss';
-@import '../shared/breakpoints.scss';
+@import '../shared/variables.css';
 
 main {
   width: 100%;
-  max-width: $three-home-cards-width;
-  min-width: $one-home-card-width-padded;
-  padding: 0 $side-padding;
+  max-width: var(--three-home-cards-width);
+  min-width: var(--one-home-card-width-padded);
+  padding: 0 var(--side-padding);
   margin: 0 auto;
 }
 
@@ -39,8 +38,11 @@ main {
   grid-row-gap: 20px;
   align-items: start;
 
-  @media #{$breakpoints-middle} {
-    max-width: $two-home-cards-width;
+
+  /* Accommodates two home page cards */
+  /* (2 * home card width) + gap width + (2 * side padding) */
+  @media (1002px <= width < 1484px) {
+    max-width: var(--two-home-cards-width);
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
@@ -52,8 +54,10 @@ main {
       "fungi bacteria";
   }
 
-  @media #{$breakpoints-small-all} {
-    max-width: $home-card-width;
+  /* Accommodates one home page card */
+  /* home card width + (2 * side padding) */
+  @media (width < 1002px) {
+    max-width: var(--home-card-width);
     margin: 0 auto;
     grid-template-columns: 1fr;
     grid-template-rows: 140px 140px repeat(5, 300px);

@@ -16,9 +16,9 @@ module.exports = (env) => {
       'search': path.resolve(__dirname, 'src/assets/scripts/search/index.ts'),
 
       // styles
-      'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.scss'),
-      'search_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'search.scss'),
-      '404_styles': path.resolve(__dirname, 'src', 'assets', 'styles', '404.scss')
+      'home_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'home.css'),
+      'search_styles': path.resolve(__dirname, 'src', 'assets', 'styles', 'search.css'),
+      '404_styles': path.resolve(__dirname, 'src', 'assets', 'styles', '404.css')
     },
     output: {
       path: path.resolve(__dirname, 'dist', 'assets'),
@@ -48,7 +48,7 @@ module.exports = (env) => {
           ],
         },
         {
-          test: /\.scss$/,
+          test: /\.css$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
@@ -57,7 +57,6 @@ module.exports = (env) => {
                 importLoaders: 1,
               },
             },
-            'sass-loader',
             // 'postcss-loader',
           ],
         },

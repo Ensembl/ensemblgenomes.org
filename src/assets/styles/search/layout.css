@@ -1,10 +1,10 @@
-@import '../shared/variables.scss';
+@import '../shared/variables.css';
 
 main {
   width: 100%;
-  max-width: $three-home-cards-width;
-  min-width: $one-home-card-width-padded;
-  padding: 0 $side-padding;
+  max-width: var(--three-home-cards-width);
+  min-width: var(--one-home-card-width-padded);
+  padding: 0 var(--side-padding);
   margin: 0 auto;
 }
 

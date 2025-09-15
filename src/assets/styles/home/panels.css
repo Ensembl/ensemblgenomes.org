@@ -1,18 +1,8 @@
-$panel-border-color: #c5c6e8;
-$panel-border-radius: 10px;
-
-$protists-color: #714486;
-$plants-color: #407253;
-$bacteria-color: #70708d;
-$fungi-color: #725a4c;
-$metazoa-color: #015365;
-$ensembl-modern-color: #2378a9; // or #3d78a5 ?
-
 .home__division-panel {
   display: grid;
   grid-template-rows: [top] 62px [middle] 1fr [bottom] 60px;
-  border: 1px solid $panel-border-color;
-  border-radius: $panel-border-radius;
+  border: 1px solid var(--panel-border-color);
+  border-radius: var(--panel-border-radius);
   height: 300px;
   max-width: 460px;
   text-align: center;
@@ -54,22 +44,22 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   font-style: italic;
   font-weight: bold;
   margin-top: 4px;
+}
 
-  &_plants {
-    color: $plants-color;
-  }
-  &_protists {
-    color: $protists-color;
-  }
-  &_bacteria {
-    color: $bacteria-color;
-  }
-  &_fungi {
-    color: $fungi-color;
-  }
-  &_metazoa {
-    color: $metazoa-color;
-  }
+.home__division-panel-logo-text_plants {
+  color: var(--plants-color);
+}
+.home__division-panel-logo-text_protists {
+  color: var(--protists-color);
+}
+.home__division-panel-logo-text_bacteria {
+  color: var(--bacteria-color);
+}
+.home__division-panel-logo-text_fungi {
+  color: var(--fungi-color);
+}
+.home__division-panel-logo-text_metazoa {
+  color: var(--metazoa-color);
 }
 
 .home__panel-species {
@@ -101,47 +91,53 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   &, &:visited {
     color: white;
   }
-  
-  &_protists {
-    background-color: $protists-color;
+}
 
-    &:hover {
-      background-color: darken($protists-color, 5%);
-    }
-  }
+.home__panel-goto-button_protists {
+  background-color: var(--protists-color);
 
-  &_plants {
-    background-color: $plants-color;
-
-    &:hover {
-      background-color: darken($plants-color, 5%);
-    }
-  }
-
-  &_bacteria {
-    background-color: $bacteria-color;
-
-    &:hover {
-      background-color: darken($bacteria-color, 5%);
-    }
-  }
-
-  &_fungi {
-    background-color: $fungi-color;
-
-    &:hover {
-      background-color: darken($fungi-color, 5%);
-    }
-  }
-
-  &_metazoa {
-    background-color: $metazoa-color;
-
-    &:hover {
-      background-color: darken($metazoa-color, 5%);
-    }
+  &:hover {
+    background-color: hsl(from var(--protists-color) h s calc(l - 5));
+    /* background-color: darken($protists-color, 5%); */
   }
 }
+
+.home__panel-goto-button_plants {
+  background-color: var(--plants-color);
+
+  &:hover {
+    background-color: hsl(from var(--plants-color) h s calc(l - 5));
+    /* background-color: darken($plants-color, 5%); */
+  }
+}
+
+.home__panel-goto-button_bacteria {
+  background-color: var(--bacteria-color);
+
+  &:hover {
+    background-color: hsl(from var(--bacteria-color) h s calc(l - 5));
+    /* background-color: darken($bacteria-color, 5%); */
+  }
+}
+
+.home__panel-goto-button_fungi {
+  background-color: var(--fungi-color);
+
+  &:hover {
+    background-color: hsl(from var(--fungi-color) h s calc(l - 5));
+    /* background-color: darken($fungi-color, 5%); */
+  }
+}
+
+.home__panel-goto-button_metazoa {
+  background-color: var(--metazoa-color);
+
+  &:hover {
+    background-color: hsl(from var(--metazoa-color) h s calc(l - 5));
+    /* background-color: darken($metazoa-color, 5%); */
+  }
+}
+
 
 .home__modern-panel {
   display: grid;
@@ -164,9 +160,9 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   align-items: center;
   height: 50px;
   padding-left: 24px;
-  background-color: $ensembl-modern-color;
-  border-top-left-radius: $panel-border-radius;
-  border-top-right-radius: $panel-border-radius;
+  background-color: var(--ensembl-modern-color);
+  border-top-left-radius: var(--panel-border-radius);
+  border-top-right-radius: var(--panel-border-radius);
 }
 
 .home__modern-panel-logo {
@@ -176,7 +172,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
       ". subheading";
   grid-template-columns: min-content  min-content;
   
-  &-image {
+  .home__modern-panel-logo-image {
     grid-area: image;
 
     img {
@@ -184,7 +180,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
     }
   }
 
-  &-heading {
+  .home__modern-panel-logo-heading {
     grid-area: heading;
     color: white;
     font-size: 18px;
@@ -193,7 +189,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
     align-self: center;
   }
 
-  &-subheading {
+  .home__modern-panel-logo-subheading {
     grid-area: subheading;
     color: white;
     font-size: 10px;
@@ -213,11 +209,11 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
   justify-content: space-between;
   border-style: solid;
   border-width: 1px;
-  border-left-color: $panel-border-color;
-  border-right-color: $panel-border-color;
-  border-bottom-color: $panel-border-color;
-  border-bottom-left-radius: $panel-border-radius;
-  border-bottom-right-radius: $panel-border-radius;
+  border-left-color: var(--panel-border-color);
+  border-right-color: var(--panel-border-color);
+  border-bottom-color: var(--panel-border-color);
+  border-bottom-left-radius: var(--panel-border-radius);
+  border-bottom-right-radius: var(--panel-border-radius);
   padding: 0 26px 0 34px;
 }
 
@@ -236,7 +232,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 
 .home__modern-panel-goto-button {
   text-decoration: none;
-  background-color: $ensembl-modern-color;
+  background-color: var(--ensembl-modern-color);
   border-radius: 5px;
   padding: 4px 8px;
 
@@ -248,7 +244,7 @@ $ensembl-modern-color: #2378a9; // or #3d78a5 ?
 .home__search-panel {
   grid-column: search;
   height: 58px;
-  border: 1px solid $panel-border-color;
+  border: 1px solid var(--panel-border-color);
   background-color: #ccd4e5;
   padding-right: 30px;
 

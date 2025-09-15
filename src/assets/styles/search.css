@@ -1,0 +1,11 @@
+@import './shared/normalize.css';
+@import './shared/layout.css';
+@import './shared/header.css';
+@import './shared/footer.css';
+
+@import './search/layout.css';
+@import './search/search-panel.css';
+@import './search/divisions-filter.css';
+@import './search/hit-count.css';
+@import './search/search-result-item.css';
+@import './search/pager.css';

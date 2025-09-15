@@ -12,7 +12,7 @@
     margin-left: 0.5rem;
   }
 
-  &_current {
+  .pager__page_current {
     background-color: #008000;
     color: white;
   }
