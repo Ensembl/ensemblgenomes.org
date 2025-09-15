@@ -11,11 +11,11 @@
   & + & {
     margin-left: 0.5rem;
   }
+}
 
-  .pager__page_current {
-    background-color: #008000;
-    color: white;
-  }
+.pager__page_current {
+  background-color: #008000;
+  color: white;
 }
 
 .pager__spanner {
