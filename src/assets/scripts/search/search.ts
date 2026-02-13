@@ -37,7 +37,17 @@ const runSearch = async (url: string): Promise<SearchResponse> => {
 
 const buildSearchUrl = (params: SearchParams & { domain: string }) => {
   const { domain, page = 1, perPage = 10 } = params;
-  const query = buildQuery(params.query, params.division);
+
+  let searchTerm = decodeURIComponent(params.query);
+
+  // Some search queries contain symbols that confuse Solr,
+  // a common example being a colon for bacterial stable gene ids (as in ENSB:Fz89gtsJdhbqCXy).
+  // So, unless the user has already wrapped the query in quotes, do so here
+  if (!searchTerm.startsWith('"') && !searchTerm.endsWith('"')) {
+    searchTerm = encodeURIComponent(`"${searchTerm}"`);
+  }
+
+  const query = buildQuery(searchTerm, params.division);
   const start = calculateOffset(page, perPage);
   const queryParams = `query=${query}&fields=${getGeneFields()}&start=${start}&size=${perPage}`;
   return `https://www.ebi.ac.uk/ebisearch/ws/rest/${domain}?${queryParams}`;
