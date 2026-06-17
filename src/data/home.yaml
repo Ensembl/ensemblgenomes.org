@@ -42,7 +42,7 @@ divisions:
     species:
       - name: Magnaporthe oryzae
         assembly: MG8
-        link: https://fungi.ensembl.org/Magnaporthe_oryzae/Info/Index
+        link: https://fungi.ensembl.org/Pyricularia_oryzae/Info/Index
         image: Magnaporthe_oryzae.png
       - name: Saccharomyces cerevisiae
         assembly: R64-1-1
