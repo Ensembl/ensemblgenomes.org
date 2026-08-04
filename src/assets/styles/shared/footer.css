@@ -6,7 +6,7 @@ footer {
   width: 100%;
   max-width: var(--three-home-cards-width);
   padding: 0 var(--side-padding);
-  margin: 20px auto 0;
+  margin: auto;
 }
 
 .footer__left {

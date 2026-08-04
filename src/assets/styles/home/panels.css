@@ -134,74 +134,47 @@
 }
 
 
-.home__modern-panel {
+.home__new-website-panel {
+  grid-area: new-ensembl;
   display: grid;
   height: 100%;
   grid-template-rows: auto 1fr;
   max-width: 460px;
 }
 
-.home__modern-panel_covid {
-  grid-area: sars;
-}
 
-.home__modern-panel_rapid {
-  grid-area: rapid-release;
-}
-
-
-.home__modern-panel-header {
+.home__new-website-panel-header {
   display: flex;
   align-items: center;
   height: 50px;
   padding-left: 24px;
-  background-color: var(--ensembl-modern-color);
+  background-color: var(--new-ensembl-brand-color);
   border-top-left-radius: var(--panel-border-radius);
   border-top-right-radius: var(--panel-border-radius);
 }
 
-.home__modern-panel-logo {
-  display: grid;
-  grid-template-areas:
-      "image heading"
-      ". subheading";
-  grid-template-columns: min-content  min-content;
+.home__new-website-panel-logo {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
   
-  .home__modern-panel-logo-image {
-    grid-area: image;
-
-    img {
-      height: 32px;
-    }
+  .new-ensembl-logo-image {
+    height: 40px;
+    aspect-ratio: 395.70001 / 373.89998;
   }
 
-  .home__modern-panel-logo-heading {
-    grid-area: heading;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    font-style: italic;
-    align-self: center;
+  .new-ensembl-logotype {
+     height: 20px;
   }
 
-  .home__modern-panel-logo-subheading {
-    grid-area: subheading;
-    color: white;
-    font-size: 10px;
-    font-weight: 300;
-    text-align: right;
-    transform: translateY(-60%);
-
-    .home__modern-panel_rapid & {
-      font-style: italic;
-    }
+  img {
+    filter: invert();
   }
 }
 
-.home__modern-panel-body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.home__new-website-panel-body {
+  display: grid;
+  grid-template-rows: 1fr 62px;
   border-style: solid;
   border-width: 1px;
   border-left-color: var(--panel-border-color);
@@ -212,28 +185,13 @@
   padding: 0 26px 0 34px;
 }
 
-.home__modern-panel-covid-body-logo {
-  display: flex;
-  align-items: center;
+.home__new-website-panel-body-content {
+  align-self: center;
 }
 
-.home__modern-panel-covid-image {
-  width: 36px;
-}
 
-.home__modern-panel-covid-label {
-  font-weight: bold;
-}
-
-.home__modern-panel-goto-button {
-  text-decoration: none;
-  background-color: var(--ensembl-modern-color);
-  border-radius: 5px;
-  padding: 4px 8px;
-
-  &, &:visited {
-    color: white;
-  }
+.home__new-website-panel .home__panel-goto-button {
+  background-color: var(--new-ensembl-brand-color);
 }
 
 .home__search-panel {

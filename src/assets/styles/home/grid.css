@@ -25,15 +25,12 @@ main {
 
 .home-bottom-grid {
   display: grid;
-  height: 100%;
   padding-top: 20px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "sars plants metazoa"
-    "rapid-release plants metazoa"
-    "protists fungi bacteria"
+    "new-ensembl plants metazoa"
     "protists fungi bacteria";
-  grid-template-rows: repeat(4, 140px);
+  grid-template-rows: repeat(2, 300px);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   align-items: start;
@@ -46,11 +43,8 @@ main {
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-      "sars plants"
-      "rapid-release plants"
+      "new-ensembl plants"
       "metazoa protists"
-      "metazoa protists"
-      "fungi bacteria"
       "fungi bacteria";
   }
 
@@ -60,10 +54,8 @@ main {
     max-width: var(--home-card-width);
     margin: 0 auto;
     grid-template-columns: 1fr;
-    grid-template-rows: 140px 140px repeat(5, 300px);
     grid-template-areas:
-      "sars"
-      "rapid-release"
+      "new-ensembl"
       "plants"
       "metazoa"
       "protists"
