@@ -194,6 +194,20 @@
   background-color: var(--new-ensembl-brand-color);
 }
 
+.home__new-website-panel-species-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+  padding-left: 1rem;
+
+  li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+
 .home__search-panel {
   grid-column: search;
   height: 58px;
